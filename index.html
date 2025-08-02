@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florea | Soap Customizer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('pizza/background.png') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -2;
+            filter: blur(12px);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff8e7;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #f6c700;
+            margin-top: 30px;
+        }
+
+        .soap-center {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 10px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .soap-center img {
+            max-width: 240px;
+            height: auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .col {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .col:hover {
+            transform: scale(1.1);
+        }
+
+        .option-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            overflow: hidden;
+        }
+
+        .option-circle img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #f6c700;
+        }
+
+        input[type="radio"] {
+            margin-top: 10px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+ <h1 class="text-align-center" id="title"><span> Florea</span></h1>
+    <div class="soap-center">
+        <img id="soap-image" src="pizza/square soap.png" alt="Soap Base">
+    </div>
+
+    <h2>Skin Type</h2>
+    <div class="row">
+        <div class="col">
+            <label>Oily</label>
+            <input type="radio" name="skin" value="oily">
+        </div>
+        <div class="col">
+            <label>Dry</label>
+            <input type="radio" name="skin" value="dry">
+        </div>
+        <div class="col">
+            <label>Combined</label>
+            <input type="radio" name="skin" value="combined">
+        </div>
+    </div>
+
+    <h2>Fragrance Scent</h2>
+    <div class="row">
+        <div class="col">
+            <div class="option-circle">
+                <img src="pizza/Fresh lemon.png" alt="lemon">
+            </div>
+            <label>Fresh Lemon</label>
+            <input type="radio" name="scent" value="lemon">
+        </div>
+        <div class="col">
+            <div class="option-circle">
+                <img src="pizza/pomegrance.png" alt="pomegranate">
+            </div>
+            <label>Pomegranate</label>
+            <input type="radio" name="scent" value="pomegranate">
+        </div>
+        <div class="col">
+            <div class="option-circle">
+                <img src="pizza/Orange.png" alt="orange">
+            </div>
+            <label>Fresh Orange</label>
+            <input type="radio" name="scent" value="orange">
+        </div>
+    </div>
+
+    <h2>Natural Oils Blend</h2>
+    <div class="row">
+        <div class="col"><label>Lavender Oil</label><input type="radio" name="oil" value="lavender"></div>
+        <div class="col"><label>Almond Oil</label><input type="radio" name="oil" value="almond"></div>
+        <div class="col"><label>Coconut Oil</label><input type="radio" name="oil" value="coconut"></div>
+        <div class="col"><label>Tea Tree</label><input type="radio" name="oil" value="tea-tree"></div>
+    </div>
+
+    <h2>Choose a Shape</h2>
+    <div class="row">
+        <div class="col">
+            <div class="option-circle">
+                <img src="pizza/square soap.png" alt="Cube">
+            </div>
+            <label>Cube</label>
+            <input type="radio" name="shape" value="cube">
+        </div>
+        <div class="col">
+            <div class="option-circle">
+                <img src="pizza/orange oval.png" alt="Classic Oval">
+            </div>
+            <label>Classic Oval</label>
+            <input type="radio" name="shape" value="oval">
+        </div>
+        <div class="col">
+            <div class="option-circle">
+                <img src="pizza/orange heart.png" alt="Heart">
+            </div>
+            <label>Heart</label>
+            <input type="radio" name="shape" value="heart">
+        </div>
+    </div>
+
+    <h2>Florea Flow</h2>
+    <div class="row">
+        <div class="col"><label>Relax</label><input type="radio" name="flow" value="relax"></div>
+        <div class="col"><label>Happy</label><input type="radio" name="flow" value="happy"></div>
+        <div class="col"><label>Energize</label><input type="radio" name="flow" value="energize"></div>
+        <div class="col"><label>Comfort</label><input type="radio" name="flow" value="comfort"></div>
+    </div>
+
+    <script>
+        const scentRadios = document.querySelectorAll('input[name="scent"]');
+        const shapeRadios = document.querySelectorAll('input[name="shape"]');
+        const soapImage = document.getElementById('soap-image');
+
+        let selectedScent = '';
+        let selectedShape = '';
+
+        const updateImage = () => {
+            if (selectedScent && selectedShape) {
+                const fileName = `${selectedScent} ${selectedShape}.png`;
+                soapImage.src = `pizza/${fileName}`;
+            }
+        };
+
+        scentRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                selectedScent = radio.value;
+                updateImage();
+            });
+        });
+
+        shapeRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                selectedShape = radio.value;
+                updateImage();
+            });
+        });
+    </script>
+</body>
+</html>
